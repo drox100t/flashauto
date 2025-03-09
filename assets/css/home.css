@@ -1,0 +1,599 @@
+
+/* 🔧 Évite l’espace sur le côté */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Désactive le scroll horizontal */
+    width: 100%;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #220000, #660000, #990000);
+    color: #fff;
+    transition: background 0.5s ease-in-out;
+}
+
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff4d4d;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    color: #e60000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    background: #ff4d4d;
+    color: #fff;
+}
+
+/* SECTION ACCUEIL */
+.hero {
+    height: 80vh;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 50px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);    
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.car-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2, h1 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+.hero h1 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease-in-out forwards;    
+}
+
+.hero span {
+    color: #ff4d4d;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+    background: white;
+    color: #ff0000;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn.primary {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #e60000;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.secondary:hover {
+    background: white;
+    color: #333;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* SECTION NOS VÉHICULES */
+.catalogue {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.car-card {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+
+.car-card:hover {
+    transform: translateY(-10px);
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.car-card h3, .car-card p {
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+/* SECTION SERVICES */
+
+/* 🛠️ SECTION SERVICES */
+.services {
+    background: linear-gradient(to bottom, #8B0000, #7A0000); /* Dégradé rouge foncé */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Conteneur des services */
+.services-list {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Espacement entre les cartes */
+    flex-wrap: wrap; /* Pour une meilleure adaptation sur mobile */
+}
+
+/* Carte service */
+.service {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: translateY(-5px); /* Animation légère au survol */
+}
+
+/* Images des services */
+.service img {
+    width: 200px;
+    border-radius: 4px;
+    height: auto;
+}
+
+/* Titres et texte */
+.service h3 {
+    color: #8B0000;
+    font-size: 22px;
+}
+
+.service p {
+    color: #333;
+    font-size: 16px;
+}
+
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* 🎥 Conteneur pour la vidéo YouTube */
+#youtube-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* Ratio 16:9 */
+    max-width: 177.78vh;
+    max-height: 100vh;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* ✅ Contenu au-dessus de la vidéo */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* 🎨 Boutons stylés */
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 15px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e60000;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
+/* 🌟 SECTION ACCUEIL AVEC VIDÉO */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 🎥 Vidéo en arrière-plan */
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+.cta-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    width: 80%;
+    text-align: center;
+}
+
+.avis {
+    display: none;
+}
+
+.avis.active {
+    display: block;
+}
+
+
+
+/* ✅ Contenu au-dessus de la vidéo */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.avis-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.avis-container {
+    width: 60%;
+    text-align: center;
+}
+
+.avis {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.avis.active {
+    display: block;
+    opacity: 1;
+}
+
+
+.prev-btn, .next-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #e60000;
+}
+
+
+.prev-btn:hover, .next-btn:hover {
+    background: #e60000;
+}
+
+
+
+/* 🌍 Responsive Design - Tablettes et Mobiles */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .catalogue {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .car-card {
+        width: 90%;
+    }
+
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 90%;
+    }
+
+    .avis-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prev-btn, .next-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+

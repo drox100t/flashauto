@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Auto - Votre voiture, votre avenir</title>
+    <!-- Importation du fichier CSS principal -->
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Chargement du script d'animation après le chargement du DOM -->
+    <script defer src="assets/js/animations.js"></script>
+</head>
+<body>
+
+    <!-- 🎥 Vidéo de fond pour l'effet d'arrière-plan -->
+    <div id="video-container">
+        <video autoplay muted loop>
+            <source src="assets/videos/background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+    </div>
+    
+    <!-- 🚗 En-tête du site avec la barre de navigation -->
+    <header class="header reveal">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Flash Auto 🚗</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="vehicules.html">Nos véhicules</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 🌟 Section d'accueil avec slogan et boutons CTA -->
+    <div class="hero reveal">
+        <div class="hero-content">
+            <h1>🚗 Votre prochaine voiture vous attend chez <span class="red">Flash Auto</span> !</h1>
+            <p>Découvrez nos véhicules sélectionnés avec soin et repartez avec la voiture de vos rêves.</p>
+            <div class="cta-buttons">
+                <a href="" class="btn btn-primary">Voir nos véhicules</a>
+                <a href="" class="btn btn-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🚘 Section Nos Véhicules -->
+    <section class="vehicules reveal">
+        <h2>Nos véhicules 🚘</h2>
+        <div class="catalogue">
+            <div class="car-card">
+                <img src="assets/images/amggt.jpg" alt="Polo 5 2010">
+                <h3>Polo 5 2010</h3>
+                <p>1.6 TDI 75cv</p>
+                <a href="contact.html" class="btn">En savoir plus</a>
+            </div>
+            <div class="car-card">
+                <img src="assets/images/m.jpg" alt="Golf 6 2010">
+                <h3>Golf 6 2010</h3>
+                <p>2.0 TDI 110cv</p>
+                <a href="contact.html" class="btn">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛠️ Section Nos Services -->
+    <section class="services reveal">
+        <h2>Nos Services 🛠️</h2>
+        <div class="services-list">
+            <div class="service">
+                <img src="assets/images/achatvente.jpg" alt="Achat & vente">
+                <h3>Achat & vente de voitures</h3>
+                <p>Vendez et achetez votre véhicule facilement.</p>
+            </div>
+            <div class="service">
+                <img src="assets/images/leasing.jpeg" alt="Financement">
+                <h3>Financement & leasing</h3>
+                <p>Solutions adaptées à votre budget.</p>
+            </div>
+            <div class="service">
+                <img src="assets/images/repa.avif" alt="Entretien">
+                <h3>Entretien & réparation</h3>
+                <p>Des experts pour votre voiture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⭐ Section Avis & Témoignages avec slider -->
+    <section class="temoignages reveal">
+        <h2>Avis & Témoignages ⭐</h2>
+        <div class="avis-slider">
+            <button class="prev-btn">◀</button>
+            <div class="avis-container">
+                <div class="avis active">
+                    <p>⭐⭐⭐⭐⭐ "Service impeccable, voiture parfaite !"</p>
+                    <span>- Sarah M.</span>
+                </div>
+                <div class="avis">
+                    <p>⭐⭐⭐⭐⭐ "Très satisfait de mon achat chez Flash Auto."</p>
+                    <span>- Kevin R.</span>
+                </div>
+                <div class="avis">
+                    <p>⭐⭐⭐⭐⭐ "Super accueil et service rapide !"</p>
+                    <span>- Julien B.</span>
+                </div>
+            </div>
+            <button class="next-btn">▶</button>
+        </div>
+    </section>
+
+    <!-- ℹ️ Section À propos -->
+    <section class="a-propos reveal">
+        <h2>À propos de nous ℹ️</h2>
+        <p>Flash Auto, votre concessionnaire de confiance pour des véhicules de qualité.</p>
+    </section>
+
+    <!-- 🏁 Pied de page -->
+    <footer>
+        <p>© 2024 Flash Auto - Site développé par <strong>Jan Jawish</strong></p>
+    </footer>
+
+    <!-- 🔝 Bouton retour en haut -->
+    <button id="backToTop">🔝</button>
+
+</body>
+</html>
